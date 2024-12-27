@@ -2,7 +2,6 @@ package Firstcry;
 
 import java.time.Duration;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,44 +10,35 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class login {
+public class homepage {
 	String driverpath = "C:\\Users\\Samiksha\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
 	WebDriver driver = new ChromeDriver();
 
 	@BeforeTest
-	void navigate() {
+		void navigate() {
 		driver.get("https://firstcrystore.in/");
 		driver .manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}
-	
+
 	@Test(priority = 1)
-	void account() {
-		WebElement A = driver.findElement(By.xpath("//span[normalize-space()='Account']"));
-        A.click();
+	void next_icon() {
+		WebElement NI = driver.findElement(By.xpath("//span[@class='carousel-control-next-icon']"));
+        NI.click();
 	}
 	
 	@Test(priority = 2)
-	void login_email() {
-		WebElement E = driver.findElement(By.xpath("//input[@name='email']"));
-        E.sendKeys("hello123@gmail.com");
-        
+	void before_icon() {
+		WebElement BI = driver.findElement(By.xpath("//span[@class='carousel-control-prev-icon']"));
+        BI.click();
 	}
 	
 	@Test(priority = 3)
-	void login_password() {
-		WebElement P = driver.findElement(By.xpath("//input[@name='password']"));
-        P.sendKeys("Manual@123");
-	}
-	
-	@Test(priority = 4)
-	void signin() throws InterruptedException {
-		WebElement S = driver.findElement(By.xpath("//button[@type='submit']"));
-        S.click();
-        Thread.sleep(5000);
-        Alert o=driver.switchTo().alert();
-        o.accept();
+	void zero_one() {
+		WebElement Z = driver.findElement(By.xpath("//div[@class='shop-by-age-container']//a[1]"));
+        Z.click();
+        
 	}
 	
 	@AfterTest
@@ -57,5 +47,4 @@ public class login {
 	}
 
 
-	
 }
