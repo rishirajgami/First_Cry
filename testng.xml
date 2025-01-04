@@ -3,14 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="Firstcry.accessories"/>
-      <class name="Firstcry.toys"/>
-      <class name="Firstcry.jacket"/>
-      <class name="Firstcry.login"/>
-      <class name="Firstcry.stroller"/>
-      <class name="Firstcry.diapers"/>
-      <class name="Firstcry.cot"/>
-      <class name="Firstcry.homepage"/>
+      <class name="FirstCry_FirstCry.LoginPage"/>
+      <class name="FirstCry_FirstCry.AddCart"/>
+      <class name="FirstCry_FirstCry.BillingAddress"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

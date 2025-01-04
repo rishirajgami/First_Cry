@@ -1,4 +1,4 @@
-package Firstcry.Firstcry;
+package FirstCry.FirstCry;
 
 /**
  * Hello world!
