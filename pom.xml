@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Firstcry</groupId>
-  <artifactId>Firstcry</artifactId>
+  <groupId>FirstCry</groupId>
+  <artifactId>FirstCry</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>Firstcry</name>
+  <name>FirstCry</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -29,13 +29,15 @@
   </dependencyManagement>
 
   <dependencies>
+  
   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.18.1</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>

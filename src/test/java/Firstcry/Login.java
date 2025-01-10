@@ -1,4 +1,4 @@
-package Firstcry;
+package FirstCry;
 
 import java.time.Duration;
 
@@ -7,55 +7,57 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class login {
-	String driverpath = "C:\\Users\\Samiksha\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
-	WebDriver driver = new ChromeDriver();
+public class Login {
+	String driverPath = "C:\\Users\\LENOVO\\Downloads\\chromedriver-win64\\chromedriver.exe";
 
+	WebDriver driver=new ChromeDriver();
+	
 	@BeforeTest
-	void navigate() {
-		driver.get("https://firstcrystore.in/");
-		driver .manage().window().maximize();
+	void Navigate() {
+		
+		driver.manage().window().maximize();
+		driver.get("https://firstcrystore.in/#/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
 	}
-	
-	@Test(priority = 1)
+	@Test(priority=1,enabled=false)
 	void account() {
-		WebElement A = driver.findElement(By.xpath("//span[normalize-space()='Account']"));
-        A.click();
+		WebElement Account=driver.findElement(By.xpath("//span[normalize-space()='Account']"));
+		Account.click();
+		WebElement CreateAccount=driver.findElement(By.xpath("//a[normalize-space()='Create Account']"));
+		CreateAccount.click();
+		WebElement FN=driver.findElement(By.xpath("//input[@name='firstname']"));
+		FN.sendKeys("Test007");
+		WebElement LN=driver.findElement(By.xpath("//input[@name='lastname']"));
+		LN.sendKeys("Tst");	
+		WebElement Email=driver.findElement(By.xpath("//input[@name='email']"));
+		Email.sendKeys("Tst@gmail.com");
+		WebElement PSW=driver.findElement(By.xpath("//input[@name='password']"));
+		PSW.sendKeys("Tst@123");
+		WebElement CPSW=driver.findElement(By.xpath("//input[@name='confirmpassword']"));
+		CPSW.sendKeys("Tst@123");
+		WebElement SIGNIN=driver.findElement(By.xpath("//button[@class=\"submit-btn\"]"));
+		SIGNIN.click();//unable to click
+		}
+	@Test(priority=2)
+	void login() throws InterruptedException {
+		WebElement Account=driver.findElement(By.xpath("//span[normalize-space()='Account']"));
+		Account.click();
+		WebElement Email=driver.findElement(By.xpath("//input[@name='email']"));
+		Email.sendKeys("Tst@gmail.com");
+		WebElement PSW=driver.findElement(By.xpath("//input[@name='password']"));
+		PSW.sendKeys("Tst@123");
+		WebElement SIGNIN=driver.findElement(By.xpath("//button[@type='submit']"));
+		SIGNIN.click();
+		Thread.sleep(3000);
+		Alert a=driver.switchTo().alert();
+		a.accept();
+		
+		
+		
 	}
 	
-	@Test(priority = 2)
-	void login_email() {
-		WebElement E = driver.findElement(By.xpath("//input[@name='email']"));
-        E.sendKeys("hello123@gmail.com");
-        
-	}
-	
-	@Test(priority = 3)
-	void login_password() {
-		WebElement P = driver.findElement(By.xpath("//input[@name='password']"));
-        P.sendKeys("Manual@123");
-	}
-	
-	@Test(priority = 4)
-	void signin() throws InterruptedException {
-		WebElement S = driver.findElement(By.xpath("//button[@type='submit']"));
-        S.click();
-        Thread.sleep(5000);
-        Alert o=driver.switchTo().alert();
-        o.accept();
-	}
-	
-	@AfterTest
-	void close() {
-		driver.quit();
-	}
-
-
 	
 }
