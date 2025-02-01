@@ -22,7 +22,7 @@ public class homepage {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 0)
 	void next_icon() {
 		WebElement NI = driver.findElement(By.xpath("//span[@class='carousel-control-next-icon']"));
         NI.click();
